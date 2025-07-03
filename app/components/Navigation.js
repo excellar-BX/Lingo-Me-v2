@@ -54,9 +54,9 @@ const Navigation = () => {
   };
 
   return (
-    <div className={`${isCollapsed ? 'w-20' : 'w-64'} bg-white shadow-lg transition-all duration-300 ease-in-out flex flex-col h-screen fixed left-0 top-0 z-50`}>
+    <div className={`${isCollapsed ? 'w-20' : 'w-64'} bg-white shadow-lg transition-all duration-300 ease-in-out flex flex-col h-screen  left-0 top-0 z-50`}>
       {/* Header */}
-      <div className="p-4 border-b border-gray-200 flex items-center justify-between">
+      <div className="px-2 py-4 border-b border-gray-200 flex items-center justify-between">
         <div className="flex items-center">
           {/* Stylized SVG Icon */}
           <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">

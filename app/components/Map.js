@@ -50,10 +50,13 @@ export default function Map({ userLocation, places, selectedPlace, onPlaceClick 
   if (!userLocation) return null
 
   return (
+    <div className="glass-morphism max-lg:h-[400px] overflow-hidden w-full " >
     <MapContainer
       center={[userLocation.lat, userLocation.lng]}
       zoom={13}
-      className="leaflet-container"
+      scrollWheelZoom={false}
+      className="leaflet-container h-full w-full  "
+      
       ref={mapRef}
     >
       <TileLayer
@@ -112,5 +115,7 @@ export default function Map({ userLocation, places, selectedPlace, onPlaceClick 
 
       <MapUpdater selectedPlace={selectedPlace} places={places} />
     </MapContainer>
+
+    </div>
   )
 }

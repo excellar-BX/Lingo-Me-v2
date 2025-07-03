@@ -189,16 +189,16 @@ export default function Home() {
       case 'error':
         return 'Location unavailable'
       case 'success':
-        return 'Location found'
+        return `Location found, lat: ${userLocation.lat}, lng: ${userLocation.lng} `
       default:
         return ''
     }
   }
 
   return (
-    <div className="flex h-screen overflow-hidden bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600">
-      <div className="w-96 glass-morphism m-4 rounded-2xl flex flex-col overflow-hidden">
-        <div className="p-6 border-b border-white/20">
+    <div className="flex flex-col lg:flex-row h-screen overflow-hidden bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600">
+      <div className="lg:max-w-96 max-lg:h-[50%] glass-morphism m-4 rounded-2xl flex lg:flex-col flex-row max-md:flex-col  overflow-hidden">
+        <div className="p-6 max-w-96 border-b border-white/20">
           <input
             type="text"
             placeholder="Search places..."
@@ -282,14 +282,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex-1 relative">
-        <div className={`absolute top-6 right-6 z-[1000] px-4 py-2 rounded-xl glass-morphism text-white text-sm font-medium shadow-lg ${
+      <div className="flex-1  relative">
+        <div  onClick={() => setSelectedPlace({'lat':userLocation.lat, 'lng':userLocation.lng})} className={`absolute hover:cursor-pointer bottom-6 h-fit sm:top-6 right-6 z-[1000] px-4 py-2 rounded-xl glass-morphism text-white text-sm font-medium shadow-lg ${
           locationStatus === 'loading' ? 'text-blue-200' :
           locationStatus === 'error' ? 'text-red-200' : 'text-green-200'
         }`}>
           {getLocationStatusText()}
         </div>
-        
+
         {userLocation && (
           <Map
             userLocation={userLocation}

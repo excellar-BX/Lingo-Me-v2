@@ -1,6 +1,7 @@
 import './global.css'
 import { Inter } from 'next/font/google'
 import Navigation from './components/Navigation';
+import 'leaflet/dist/leaflet.css'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -34,12 +35,11 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
       </head>
       <body className={`${inter.className} min-h-screen gradient-bg overflow-x-hidden`}>
         <div className="flex min-h-screen bg-gray-100">
           <Navigation />
-          <main className="flex-1 ml-20 lg:ml-64 transition-all duration-300">
+          <main className="flex-1  transition-all duration-300">
             {children}
           </main>
         </div>
