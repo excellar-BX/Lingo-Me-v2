@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 
 const Navigation = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const pathname = usePathname();
 
   // Auto-collapse on mobile
@@ -54,10 +54,10 @@ const Navigation = () => {
   };
 
   return (
-    <div className={`${isCollapsed ? 'w-20' : 'w-64'} bg-white shadow-lg transition-all duration-300 ease-in-out flex flex-col h-screen  left-0 top-0 z-50`}>
+    <div className={`${isCollapsed ? 'w-16 sm:w-20' : 'w-64'} bg-white shadow-lg transition-all duration-300 ease-in-out flex flex-col h-screen fixed left-0 top-0 z-50`}>
       {/* Header */}
       <div className="px-2 py-4 border-b border-gray-200 flex items-center justify-between">
-        <div className="flex items-center">
+        <div className="flex items-center w-fit">
           {/* Stylized SVG Icon */}
           <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
             <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="currentColor">
@@ -72,10 +72,10 @@ const Navigation = () => {
         </div>
         <button
           onClick={toggleSidebar}
-          className="p-1 rounded-lg hover:bg-gray-100 transition-colors"
+          className="p-1 relative rounded-lg hover:bg-gray-100 transition-colors"
         >
           {isCollapsed ? (
-            <ChevronRight className="w-5 h-5 text-gray-600" />
+            <ChevronRight className="w-5 -left-2 -top-2 absolute h-5 text-gray-600" />
           ) : (
             <ChevronLeft className="w-5 h-5 text-gray-600" />
           )}
@@ -83,7 +83,7 @@ const Navigation = () => {
       </div>
 
       {/* Navigation Items */}
-      <nav className="flex-1 p-4">
+      <nav className="flex-1 px-2 sm:p-4">
         <ul className="space-y-2">
           {navigationItems.map((item) => {
             const IconComponent = item.icon;
@@ -93,7 +93,7 @@ const Navigation = () => {
               <li key={item.id}>
                 <Link
                   href={item.href}
-                  className={`w-full flex items-center p-3 rounded-lg transition-all duration-200 ${
+                  className={`w-full flex justify-center items-center p-3 rounded-lg transition-all duration-200 ${
                     active
                       ? 'bg-blue-100 text-blue-700 shadow-sm'
                       : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
@@ -112,10 +112,10 @@ const Navigation = () => {
       </nav>
 
       {/* Bottom Section */}
-      <div className="p-4 border-t border-gray-200">
+      <div className="px-2 sm:p-4 border-t border-gray-200">
         {/* User Profile */}
         <button 
-          className="w-full flex items-center p-3 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition-all duration-200 mb-2"
+          className="w-full flex justify-center items-center p-3 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition-all duration-200 mb-2"
           title={isCollapsed ? "User Profile" : undefined}
         >
           <div className="w-5 h-5 bg-gray-400 rounded-full flex items-center justify-center flex-shrink-0">
@@ -131,7 +131,7 @@ const Navigation = () => {
 
         {/* Logout Button */}
         <button 
-          className="w-full flex items-center p-3 rounded-lg text-red-600 hover:bg-red-50 hover:text-red-700 transition-all duration-200"
+          className="w-full flex justify-center items-center p-3 rounded-lg text-red-600 hover:bg-red-50 hover:text-red-700 transition-all duration-200"
           title={isCollapsed ? "Logout" : undefined}
         >
           <LogOut className="w-5 h-5 flex-shrink-0" />

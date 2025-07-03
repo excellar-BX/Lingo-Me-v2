@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} min-h-screen gradient-bg overflow-x-hidden`}>
         <div className="flex min-h-screen bg-gray-100">
           <Navigation />
-          <main className="flex-1  transition-all duration-300">
+          <main className="flex-1 max-sm:ml-14 max-md:ml-18  transition-all duration-300">
             {children}
           </main>
         </div>

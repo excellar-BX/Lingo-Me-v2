@@ -45,7 +45,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen md:ml-20 p-8">
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
         <div className="text-center mb-16">

@@ -43,7 +43,7 @@ export default function SettingsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-purple-50 p-8">
+    <div className="min-h-screen md:ml-20 bg-purple-50 p-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="flex items-center mb-8">

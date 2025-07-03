@@ -50,7 +50,7 @@ export default function Map({ userLocation, places, selectedPlace, onPlaceClick 
   if (!userLocation) return null
 
   return (
-    <div className="glass-morphism max-lg:h-[400px] overflow-hidden w-full " >
+    <div className="glass-morphism max-lg:h-[300px] max-xl:h-[400px] overflow-hidden w-full " >
     <MapContainer
       center={[userLocation.lat, userLocation.lng]}
       zoom={13}

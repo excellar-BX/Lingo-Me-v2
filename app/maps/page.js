@@ -196,9 +196,9 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col lg:flex-row h-screen overflow-hidden bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600">
-      <div className="lg:max-w-96 max-lg:h-[50%] glass-morphism m-4 rounded-2xl flex lg:flex-col flex-row max-md:flex-col  overflow-hidden">
-        <div className="p-6 max-w-96 border-b border-white/20">
+    <div className="flex flex-col md:ml-20 lg:flex-row h-screen overflow-hidden bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600">
+      <div className="lg:max-w-96 max-lg:h-[60%] min-h-[400px] glass-morphism m-4 rounded-2xl flex lg:flex-col flex-row max-md:flex-col  overflow-hidden">
+        <div className="lg:p-6 p-3 max-w-96 border-b border-white/20">
           <input
             type="text"
             placeholder="Search places..."
@@ -224,7 +224,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-4 space-y-3">
+        <div className="flex-1 overflow-y-auto max-sm:p-2 p-4 space-y-3">
           {loading && (
             <div className="text-center py-10 text-white/70">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-4"></div>
@@ -282,7 +282,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex-1  relative">
+      <div className="flex-1  relative h-fit ">
         <div  onClick={() => setSelectedPlace({'lat':userLocation.lat, 'lng':userLocation.lng})} className={`absolute hover:cursor-pointer bottom-6 h-fit sm:top-6 right-6 z-[1000] px-4 py-2 rounded-xl glass-morphism text-white text-sm font-medium shadow-lg ${
           locationStatus === 'loading' ? 'text-blue-200' :
           locationStatus === 'error' ? 'text-red-200' : 'text-green-200'
