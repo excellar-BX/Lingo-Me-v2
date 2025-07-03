@@ -54,7 +54,7 @@ const Navigation = () => {
   };
 
   return (
-    <div className={`${isCollapsed ? 'w-16 sm:w-20' : 'w-64'} bg-white shadow-lg transition-all duration-300 ease-in-out flex flex-col h-screen fixed left-0 top-0 z-50`}>
+    <div className={`${isCollapsed ? 'w-16 sm:w-20' : 'w-64'} bg-white shadow-lg transition-all duration-300 ease-in-out flex flex-col h-screen max-sm:fixed ${pathname.includes("settings") && "fixed"} left-0 top-0 z-50`}>
       {/* Header */}
       <div className="px-2 py-4 border-b border-gray-200 flex items-center justify-between">
         <div className="flex items-center w-fit">
@@ -93,7 +93,7 @@ const Navigation = () => {
               <li key={item.id}>
                 <Link
                   href={item.href}
-                  className={`w-full flex justify-center items-center p-3 rounded-lg transition-all duration-200 ${
+                  className={`w-full flex ${isCollapsed && "justify-center"} items-center p-3 rounded-lg transition-all duration-200 ${
                     active
                       ? 'bg-blue-100 text-blue-700 shadow-sm'
                       : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
@@ -115,7 +115,7 @@ const Navigation = () => {
       <div className="px-2 sm:p-4 border-t border-gray-200">
         {/* User Profile */}
         <button 
-          className="w-full flex justify-center items-center p-3 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition-all duration-200 mb-2"
+          className={`w-full flex ${isCollapsed && "justify-center"} items-center p-3 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition-all duration-200 mb-2`}
           title={isCollapsed ? "User Profile" : undefined}
         >
           <div className="w-5 h-5 bg-gray-400 rounded-full flex items-center justify-center flex-shrink-0">
@@ -131,7 +131,7 @@ const Navigation = () => {
 
         {/* Logout Button */}
         <button 
-          className="w-full flex justify-center items-center p-3 rounded-lg text-red-600 hover:bg-red-50 hover:text-red-700 transition-all duration-200"
+          className={`w-full flex ${isCollapsed && "justify-center"} items-center p-3 rounded-lg text-red-600 hover:bg-red-50 hover:text-red-700 transition-all duration-200`}
           title={isCollapsed ? "Logout" : undefined}
         >
           <LogOut className="w-5 h-5 flex-shrink-0" />

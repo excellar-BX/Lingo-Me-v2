@@ -196,7 +196,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col md:ml-20 lg:flex-row h-screen overflow-hidden bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600">
+    <div className="flex flex-col lg:flex-row h-screen overflow-hidden bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600">
       <div className="lg:max-w-96 max-lg:h-[60%] min-h-[400px] glass-morphism m-4 rounded-2xl flex lg:flex-col flex-row max-md:flex-col  overflow-hidden">
         <div className="lg:p-6 p-3 max-w-96 border-b border-white/20">
           <input
