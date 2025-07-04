@@ -54,7 +54,7 @@ const Navigation = () => {
   };
 
   return (
-    <div className={`${isCollapsed ? 'w-16 sm:w-20' : 'w-64'} bg-white shadow-lg transition-all duration-300 ease-in-out flex flex-col h-screen max-sm:fixed ${pathname.includes("settings") && "fixed"} left-0 top-0 z-50`}>
+    <div className={`${isCollapsed ? 'w-16 sm:w-20 max-[400px]:-translate-x-16' : 'w-64 translate-x-0'} bg-white shadow-lg transition-all duration-300 ease-in-out flex flex-col h-screen max-sm:fixed ${pathname.includes("settings") && "fixed"} left-0 top-0 z-50`}>
       {/* Header */}
       <div className="px-2 py-4 border-b border-gray-200 flex items-center justify-between">
         <div className="flex items-center w-fit">
@@ -72,10 +72,10 @@ const Navigation = () => {
         </div>
         <button
           onClick={toggleSidebar}
-          className="p-1 relative rounded-lg hover:bg-gray-100 transition-colors"
+          className="p-1 relative  rounded-lg hover:bg-gray-100 transition-colors"
         >
           {isCollapsed ? (
-            <ChevronRight className="w-5 -left-2 -top-2 absolute h-5 text-gray-600" />
+            <ChevronRight className="w-5 max-[400px]:translate-x-6  max-[400px]:text-[#fff] max-[400px]:text-2xl glass-morphism -left-2 -top-2 absolute h-5 text-gray-600" />
           ) : (
             <ChevronLeft className="w-5 h-5 text-gray-600" />
           )}
