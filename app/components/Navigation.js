@@ -75,7 +75,7 @@ const Navigation = () => {
           className="p-1 relative  rounded-lg hover:bg-gray-100 transition-colors"
         >
           {isCollapsed ? (
-            <ChevronRight className="w-5 max-[400px]:translate-x-6  max-[400px]:text-[#fff] max-[400px]:text-2xl glass-morphism -left-2 -top-2 absolute h-5 text-gray-600" />
+            <ChevronRight className={`w-5 max-[400px]:translate-x-6 ${pathname.includes("translator") || pathname.includes("maps")? " max-[400px]:text-[#fff]" : "max-[400px]:text-gray-600"} glass-morphism -left-2 -top-2 absolute h-5 rounded-sm text-gray-600`} />
           ) : (
             <ChevronLeft className="w-5 h-5 text-gray-600" />
           )}
